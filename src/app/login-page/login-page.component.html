@@ -1,0 +1,41 @@
+
+<body>
+    <div class="login-box" *ngIf="isonline">
+        <h2>Login</h2>
+        <form   [formGroup]="contactInfo" (ngSubmit)="afterlogin()">
+          <div class="user-box">
+            <input  type="text" name="username"  formControlName="username"  required="">
+            <label>Username</label>
+          </div>
+          <div class="user-box">
+            <input  type="password" name="passward" formControlName="password" required="">
+            <label>Password</label>
+          </div>
+         
+         <button class="btn btn-primary" style="border: none;  background-color:#7e7b7b "  >
+           
+                Login
+             
+          </button>
+          
+          <button class="btn btn-primary" style="border: none; background-color:#7e7b7b ;margin-left: 10px;" (click)="clicking()" >
+           
+                Sign Up
+            
+          </button>
+          
+        </form>
+        
+
+        
+      </div>
+      <div *ngIf="!isonline"  class="nointernets" >
+        <div class="container" style="margin-left: 450px; margin-top: 0px;">
+          <div class="icon">⚠️</div>
+          <h1>No Internet Connection</h1>
+          <p>Please check your internet connection and try again.</p>
+      </div></div>
+ 
+
+
+</body>

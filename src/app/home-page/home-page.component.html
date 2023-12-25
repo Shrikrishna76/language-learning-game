@@ -1,0 +1,16 @@
+
+
+<div class="home-container">
+  <div class="welcome-message">
+    <h1>Welcome to Code Mastery Quiz</h1>
+    <p>Enhance your coding skills through interactive exercises and challenges.</p>
+  </div>
+  <h2><label for="language">Select Language</label></h2>
+  <select id="language" [(ngModel)]="selectedLanguage">
+    <option [value]="0">Select language</option>
+    <option *ngFor="let language of languages" [value]="language.id">{{ language.name }}</option>
+  </select>
+  <br>
+  <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+  <button class="start-button" (click)="startCoding()">Start Quiz</button>
+</div>

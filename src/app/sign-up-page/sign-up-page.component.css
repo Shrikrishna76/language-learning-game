@@ -1,0 +1,41 @@
+body {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwn0saSOYjtbsLG5lvh8RLGE07xuGPVQOs0Q&usqp=CAU');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  max-width: 400px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.container h3 {
+  text-align: center;
+  color: #333;
+}
+
+.container .btn-success {
+  margin: 15px auto;
+  display: block;
+  border: none;
+  background-color: chocolate;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.container .btn-success:hover {
+  background-color:green;
+}

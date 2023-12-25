@@ -1,0 +1,17 @@
+
+<div class="progress-container">
+  <h2>Progress Details</h2>
+
+  <p><strong>User Email:</strong> {{ userEmail }}</p>
+  <p><strong>User Score:</strong> {{ userScore }}</p>
+  <p><strong>Total Marks:</strong> {{ totalMarks }}</p>
+  <p><strong>Time Remaining:</strong> {{ timeRemaining }} seconds</p>
+  <button (click)="saveProgress()">Save</button>
+
+  <!-- Toggle success message -->
+  <div *ngIf="saveSuccess" class="success-message">
+    Progress saved successfully!
+  </div>
+</div>
+
+

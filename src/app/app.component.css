@@ -1,0 +1,52 @@
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color:blue;
+  padding: 10px;
+  color: white;
+  z-index: 1000;
+}
+
+.navbar a{
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+.left-section,
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+.left-section a,
+.right-section a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.content {
+  padding: 20px;
+  margin-top: 60px; 
+}
+
+
+.right-section img {
+width: 30px;
+height: 30px; 
+border-radius: 50%; 
+margin: 0 10px; 
+}
+

@@ -1,0 +1,22 @@
+
+<div class="leaderboard-table">
+   
+    <div class="leaderboard-header">
+        <div class="leaderboard-cell">ID</div>
+        <div class="leaderboard-cell">Username</div>
+        <div class="leaderboard-cell">Email</div>
+        <div class="leaderboard-cell">Total Score</div>
+        <div class="leaderboard-cell">Total Possible Score</div>
+        <div class="leaderboard-cell">Timestamp</div>
+    </div>
+
+   
+    <div class="leaderboard-row" *ngFor="let progress of progressList">
+        <div class="leaderboard-cell">{{ progress.id }}</div>
+        <div class="leaderboard-cell">{{ progress.username }}</div>
+        <div class="leaderboard-cell">{{ progress.email }}</div>
+        <div class="leaderboard-cell">{{ progress.totalScore }}</div>
+        <div class="leaderboard-cell">{{ progress.totalPossibleScore }}</div>
+        <div class="leaderboard-cell">{{ progress.timestamp }}</div>
+    </div>
+</div>

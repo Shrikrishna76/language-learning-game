@@ -1,0 +1,33 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="container">
+    <h1 class="text-primary mb-4">Questions</h1>
+
+    
+    <div *ngIf="userScore !== null">
+      <h3>Your Score: {{ userScore }} out of {{ totalMarks }}</h3>
+      <hr>
+    </div>
+
+    <div class="timer-container">
+      <p>Time Remaining: {{ formatTimeRemaining() }}</p>
+    </div>
+    <div *ngFor="let question of questions; let i = index" class="card mb-3">
+      <div class="card-header">
+        <h2>Q- {{ (currentPage - 1) * pageSize + i + 1 }}: {{ question.text }}</h2>
+      </div>
+      <div class="options-container">
+        <div *ngFor="let option of question.options; let j = index" class="option">
+          <input type="radio" name="{{ question.id }}" [value]="option" id="{{ 'option' + j }}" [(ngModel)]="userAnswers[i]">
+          <label for="{{ 'option' + j }}">{{ option }}</label>
+        </div>
+      </div>
+      <div class="card-footer text-muted"></div>
+      <p>Marks: {{ question.marks }}</p>
+      <hr>
+    </div>
+  </div>
+
+  <div class="navigation-container">
+    <button class="btn btn-primary">Submit</button>
+  </div>
+</form>

@@ -1,0 +1,56 @@
+<body>
+  <div class="container">
+    <form [formGroup]="contactInfo" (ngSubmit)="onSubmit()">
+        <h3>Registration Form</h3>
+        <table class="table">
+          <tr>
+            <th>Full Name: </th>
+            <td>
+              <input type="text" formControlName="name" required>
+              <div *ngIf="contactInfo.get('fullname')?.touched && contactInfo.get('fullname')?.hasError('required')" style="color: #c63d3d;">Name is required.</div>
+            </td>
+          </tr>
+          <br>
+          <tr>
+            <th>Email: </th>
+            <td>
+              <input type="text" formControlName="email" required>
+              <div *ngIf="contactInfo.get('email')?.touched && contactInfo.get('email')?.hasError('required')" style="color: red;">Email is required.</div>
+              <div *ngIf="contactInfo.get('email')?.hasError('email')" style="color: red;">Invalid email format.</div>
+            </td>
+          </tr>
+          <br>
+          <tr>
+            <th>Password: </th>
+            <td>
+              <input type="password" formControlName="password" required>
+              <div *ngIf="contactInfo.get('password')?.touched && contactInfo.get('password')?.hasError('required')" style="color: red;">Password is required.</div>
+              <div *ngIf="contactInfo.get('password')?.hasError('minlength')" style="color: red;">Password should be at least 8 characters long.</div>
+            </td>
+          </tr>
+          <br>
+          <tr>
+            <th>Confirm Password: </th>
+            <td>
+              <input type="password" formControlName="confirmpassword" required>
+              <div *ngIf="contactInfo.get('confirmpassword')?.touched && contactInfo.get('confirmpassword')?.hasError('required')" style="color: red;">Confirm Password is required.</div>
+              <div *ngIf="contactInfo.get('confirmpassword')?.hasError('minlength')" style="color: red;">Confirm Password should be at least 8 characters long.</div>
+              <div *ngIf="contactInfo.get('confirmpassword')?.hasError('mismatch')" style="color: red;">Passwords do not match.</div>
+            </td>
+          </tr>
+          <br>
+      </table>
+      <button class="btn btn-success btn-block mt-3">Sign Up</button>
+  </form>
+</div>
+     
+  
+    <div *ngIf="!isonline" class="nointernets">
+      <div class="container" style="margin-left: 450px; margin-top: 0px;">
+        <div class="icon">⚠️</div>
+        <h1>No Internet Connection</h1>
+        <p>Please check your internet connection and try again.</p>
+      </div>
+    </div>
+  </body>
+  
